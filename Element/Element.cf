@@ -1,4 +1,4 @@
-token CIdent (upper (letter | '_' | '\'')*) ; 
+token CIdent (upper (letter | digit | '_' | '\'')*) ; 
 token TeX ('\\' letter+) ;
 token Weird ('%' (letter+ | digit+) '%') ;
 token Subscript ('_' (letter | ('{' (letter | digit)+ '}'))) ;
