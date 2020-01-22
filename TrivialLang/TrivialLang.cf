@@ -1,0 +1,10 @@
+separator nonempty LExp ";" ;
+Assn. LExp ::= Ident ":=" IntExp;
+Prnt. LExp ::= "put" Ident;
+
+Add. IntExp ::= IntExp1 "+" IntExp;
+Mul. IntExp1 ::= IntExp2 "*" IntExp1;
+Neg. IntExp2 ::= "NEG" IntExp2;
+Nmb. IntExp3 ::= Integer;
+coercions IntExp 3;
+
