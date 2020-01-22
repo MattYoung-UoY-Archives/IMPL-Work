@@ -1,0 +1,5 @@
+BAdd. B ::= B "+" B1;
+BMul. B1 ::= B1 "*" B2;
+BNum. B2 ::= Integer;
+coercions B 2;
+

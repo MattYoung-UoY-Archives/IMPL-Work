@@ -1,0 +1,7 @@
+AtomI. SExp ::= Integer;
+AtomV. SExp ::= Ident;
+Cons. SExp ::= "(" SExp "." SExp ")";
+Brakets. SExp ::= "(" ")";
+
+Lst. SExp ::= "(" [SExp] ")";
+separator nonempty SExp "";
