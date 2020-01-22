@@ -7,7 +7,7 @@ re_x ('x':t) = (Just "x", t)
 re_x s = (Nothing, s)
 
 re_ws :: RegExp Char
-re_ws (' ':t) = (Just " ", t)
+re_ws (' ':t) = (Just " ", dropWhile (== ' ') t)
 re_ws s = (Nothing, s)
 
 chop :: (Eq a, Show a) => RegExp a -> RegExp a -> [a] -> [[a]]
