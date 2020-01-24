@@ -8,8 +8,8 @@ import ErrM
 
 }
 
-%name pListElement ListElement
 %name pElement Element
+%name pListElement ListElement
 -- no lexer declaration
 %monad { Err } { thenM } { returnM }
 %tokentype {Token}
@@ -28,14 +28,14 @@ TeX    :: { TeX} : L_TeX { TeX ($1)}
 Weird    :: { Weird} : L_Weird { Weird ($1)}
 Subscript    :: { Subscript} : L_Subscript { Subscript ($1)}
 
-ListElement :: { [Element] }
-ListElement : {- empty -} { [] }
-            | ListElement Element { flip (:) $1 $2 }
 Element :: { Element }
 Element : CIdent { AbsElement.Cid $1 }
         | TeX { AbsElement.Tex $1 }
         | Weird { AbsElement.Wrd $1 }
         | Subscript { AbsElement.Sub $1 }
+ListElement :: { [Element] }
+ListElement : {- empty -} { [] }
+            | ListElement Element { flip (:) $1 $2 }
 {
 
 returnM :: a -> Err a

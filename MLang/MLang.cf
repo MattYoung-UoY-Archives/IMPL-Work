@@ -1,0 +1,5 @@
+separator nonempty MPro ";" ;
+Program. MPro ::= Com;
+Command. Com ::= Ins;
+IString. Com ::= String ":" Com;
+Instruction. Ins ::= "I";

@@ -7,11 +7,11 @@ import System.Environment ( getArgs, getProgName )
 import System.Exit ( exitFailure, exitSuccess )
 import Control.Monad (when)
 
-import LexElement
-import ParElement
-import SkelElement
-import PrintElement
-import AbsElement
+import LexMLang
+import ParMLang
+import SkelMLang
+import PrintMLang
+import AbsMLang
 
 
 
@@ -65,9 +65,9 @@ main = do
   args <- getArgs
   case args of
     ["--help"] -> usage
-    [] -> getContents >>= run 2 pListElement
-    "-s":fs -> mapM_ (runFile 0 pListElement) fs
-    fs -> mapM_ (runFile 2 pListElement) fs
+    [] -> getContents >>= run 2 pListMPro
+    "-s":fs -> mapM_ (runFile 0 pListMPro) fs
+    fs -> mapM_ (runFile 2 pListMPro) fs
 
 
 

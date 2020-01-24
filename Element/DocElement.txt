@@ -49,11 +49,11 @@ The symbols -> (production),  **|**  (union)
 and **eps** (empty rule) belong to the BNF notation. 
 All other symbols are terminals.
 
+  | //[Element]// | -> | **eps**
+  |  |  **|**  | //Element// //[Element]// 
   | //Element// | -> | //CIdent// 
   |  |  **|**  | //TeX// 
   |  |  **|**  | //Weird// 
   |  |  **|**  | //Subscript// 
-  | //[Element]// | -> | **eps**
-  |  |  **|**  | //Element// //[Element]// 
 
 

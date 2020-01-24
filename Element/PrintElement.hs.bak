@@ -96,9 +96,6 @@ instance Print Weird where
 instance Print Subscript where
   prt _ (Subscript i) = doc (showString i)
 
-instance Print [Element] where
-  prt = prtList
-
 instance Print Element where
   prt i e = case e of
     Cid cident -> prPrec i 0 (concatD [prt 0 cident])
@@ -107,4 +104,7 @@ instance Print Element where
     Sub subscript -> prPrec i 0 (concatD [prt 0 subscript])
   prtList _ [] = concatD []
   prtList _ (x:xs) = concatD [prt 0 x, prt 0 xs]
+
+instance Print [Element] where
+  prt = prtList
 

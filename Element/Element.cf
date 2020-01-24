@@ -3,8 +3,8 @@ token TeX ('\\' letter+) ;
 token Weird ('%' (letter+ | digit+) '%') ;
 token Subscript ('_' (letter | ('{' (letter | digit)+ '}'))) ;
 
+separator Element "" ;
 Cid. Element ::= CIdent ;
 Tex. Element ::= TeX ;
 Wrd. Element ::= Weird ;
 Sub. Element ::= Subscript ;
-separator Element "" ;
